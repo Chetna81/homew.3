@@ -1,0 +1,99 @@
+ 
+    Feature:Bmail login scenario
+                                
+    url:www.bmail.com
+                       
+    Valid username:markpatel   Invalid username:markjhon
+    
+    Valid password:test1234    Invalid password:test1432
+
+    
+    
+
+
+    Scenario:user should be able to login successfully with valid credential.
+    Given user is on the home page www. bmail.com
+    When user enter valid username "markpatel"
+    And user enter valid password "test1234"
+    And click sign in button
+    Then user should be logged in successfully
+    And user should able to welcome message.
+
+     
+    
+    Scenario:user should not able to login with valid username and invalid password
+    Given user is on the home page www. bmail.com
+    When user enter valid username "markpatel"
+    And user enter invalid password "test1432"
+    And click sign in button
+    Then user should not be logged in successfully
+    And see error message.
+
+
+
+    Scenario:user should not able to login with invalid username and valid password
+    Given user is on the home page www.bmail.com
+    When user enter invalid username "markjhon"
+    And user enter valid password "test1234"
+    And click sign in button
+    Then user should not be logged in successfully
+    And see error message.
+
+
+    
+    Scenario:user should not able to login with invalid username and invalid password
+    Given user is on the home page www.bmail.com
+    When user enter invalid username "markjhon"
+    And user enter invalid password "test1432"
+    And click sign in button
+    Then user should not be logged in successfully
+    And see error message.
+
+
+    Scenario:user should not able to login with valid username and blank password
+    Given user is on the home page www.bmail.com
+    When user enter valid username "markpatel"
+    And user leave password blank
+    And user click sign in button
+    Then user should not be logged in successfully
+    And see error message.
+
+
+    Scenario:user should not able to login with invalid username and blank password
+    Given user is on the home page www.bmail.com
+    When user enter invalid username "markjhon"
+    And user leave password blank
+    And user click sign in button
+    Then user should not be logged in successfully
+    And see error message.
+
+    
+
+    Scenario:user should not able to login with blank username and valid password
+    Given user is on the home page www.bmail.com
+    When user leave username blank
+    And user enter valid password "test1234"
+    And user click sign in button
+    Then user should not be logged in successfully
+    And see error message.
+
+
+
+    Scenario:user should not able to login with blank username and invalid password
+    Given user is on the home page www.bmail.com
+    When user leave username blank
+    And user enter invalid password "test1432"
+    And user click sign in button
+    Then user should not be logged in successfully
+    And see error message.
+
+
+
+    Scenario:user should not able to login with blank username and blank password
+    Given user is on the home page www.bmail.com
+    When user leave blank username
+    And user leave blank password
+    And user click sign in button
+    Then user should not be logged in successfully
+    And see error message. 
+  
